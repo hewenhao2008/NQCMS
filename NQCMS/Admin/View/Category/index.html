@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>栏目管理列表</title>
+<hdjs/>
+</head>
+<body>
+	<div class='wrap'>
+		<div class="menu_list">
+		    <ul>
+		        <li><a href="{|U:'index'}"  class="action">栏目列表</a></li>
+		        <li><a href="{|U:'add'}">添加栏目</a></li>
+		    </ul>
+		    <table class="table2">
+		    	<tdead>
+		    		<tr>
+		    			<td class="w50">CID</td>
+		    			<td class="w">栏目名称</td>
+		    			<td class="w">分页模板</td>
+		    			<td class="w">内容模板</td>
+		    			<td class="w">静态页面目录</td>
+		    			<td class="w">页面是否静态</td>
+		    			<td class="w">描述</td>
+		    			<td class="w">关键字</td>
+		    			<td >静态页面的命名规则</td>
+		    			<td class="w150">操作</td>
+		    		</tr>
+		    	</tdead>
+		    	<tbody>
+					<list from="$Catedata" name="$d">
+		    		<tr>
+		    			<td>{$d.cid}</td>
+		    			<td>{$d._name}</td>
+		    			<td>{$d.list_tpl}</td>
+		    			<td>{$d.content_tpl}</td>
+		    			<td>{$d.html_dir}</td>
+		    			<td><if value="{$d.url_type} eq 2" >是</if>
+							<if value="{$d.url_type} eq 1" >不是</if>
+		    			</td>
+		    			<td>{$d.description}</td>
+		    			<td>{$d.keywords}</td>
+		    			<td>{$d.arc_html_rule}</td>
+		    			<td>
+		    				<a href="{|U:'edit',array('cid'=>$d['cid'])}">修改</a> | 	
+		    				<a href="{|U:'addchild',array('pid'=>$d['cid'])}">添加子栏目</a> | 
+		    				<a href="{|U:'delete',array('cid'=>$d['cid'])}" onclick="return confirm('确定要删除该栏目吗？')">删除</a>
+		    			</td>
+		    		</tr>
+					</list>
+		    	</tbody>
+		    </table>
+		</div> 
+
+	</div>
+</body>
+</html>

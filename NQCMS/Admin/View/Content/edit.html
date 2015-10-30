@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>文章编辑</title>
+<hdjs/>
+</head>
+<body>
+    <div class='wrap'>
+        <div class="menu_list">
+            <ul>
+                <li><a href="{|U:'index'}"  class="action">文章列表</a></li>
+                <li><a href="javascript:void();">修改文章</a></li>
+            </ul>
+        </div> 
+    	<form method='post'>
+    		<input type="hidden" name='aid' value="{$data.aid}">
+			<div class="tab">
+                <ul class="tab_menu">
+                    <li lab="base">
+                        <a> 基本设置 </a>
+                    </li>
+                    <li lab="other" class="action">
+                        <a>其他设置 </a>
+                    </li>
+                </ul>
+                <div class="tab_content  hd-form">
+                    <div id="base">
+           	            <table class='table1'>
+        					<tr>
+        						<th>栏目</th>
+        						<td>
+        							<select name="cid" class='w200'>
+        								<!-- <option value="0">==选择栏目==</option> -->
+        								<list from='$categorydata' name='$c'>
+    									<option value="{$c.cid}" {$c.selected}>{$c.catname}</option>
+        								</list>	
+        							</select>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th class='w100'>标题</th>
+        						<td>
+        							<input type="text" name='title' class='w300' value="{$data.title}">
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>缩略图</th>
+        						<td>
+        							<upload size='2' type='jpg,jpeg,png,gif' limit='1' name='thumb' message="0" water="0" data="$data['thumb']"/>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>正文</th>
+        						<td>
+        							<ueditor name='content' content="{$data.content}"/>
+        						</td>
+        					</tr>
+    				    </table>
+                    </div>
+                    <div id="other">
+                        <table class='table1'>
+        					<tr>
+        						<th class='w100'>发表时间</th>
+        						<td>
+        							<input type="text" readonly="readonly" id="addtime" name="addtime"value="{$data.addtime|date:'Y/m/d h:i:s',@@}"class="w150"/>
+                                    <script>
+                                    	$('#addtime').calendar({format: 'yyyy/MM/dd HH:mm:ss'});
+                                     </script>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>关键字</th>
+        						<td>
+        							<input type="text" name='keywords' class='w200' value="{$data.keywords}">
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>描述</th>
+        						<td>
+        							<textarea name="description" class='w200 h80'>{$data.description}</textarea>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>点击数</th>
+        						<td>
+        							<input type="text" name='click' value='100' class='w200' value="{$data.click}"/>
+        						</td>
+        					</tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+			<div class='position-bottom'>
+				<input type="submit" class='hd-success' >
+			</div>
+    	</form>
+    </div>
+    	<js file='__CONTROLLER_VIEW__/Js/js.js'/>
+    </body>
+</html>

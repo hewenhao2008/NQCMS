@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>NQCMS后台管理中心</title>
+
+<hdjs/>
+<css file="__CONTROLLER_VIEW__/css/css.css"/>
+<css file="__CONTROLLER_VIEW__/css/quick_menu.css"/>
+
+<!-- 默认跳转 -->
+<base target="iframe"/>
+<!-- <base target="iframe" /> -->
+</head>
+<body>
+    <div class="nav">
+        <!--头部左侧导航-->
+        <div class="top_menu"></div>
+        <!--头部左侧导航-->
+        <!--头部右侧导航-->
+        <div class="r_menu">
+            {$hd.session.username}
+            <a href="{|U:'Login/out'}" target="_self">
+                [退出]
+            </a>
+            <span>|</span>
+            <a href="javascript:hd_ajax('{|U:'updateAllCache'}');">
+            <a nid="999" href="javascript:;" onclick="get_content(this,999)" url="{|U:'Cache/index',array('begin'=>1)}">
+                更新全站缓存
+            </a>
+            <span>|</span>
+            <a href="__WEB__" target="_blank">
+                前台首页
+            </a>
+            <span>|</span>
+            <a href="{|U:'Member/Index/index'}" target="_blank">
+                会员中心
+            </a>
+        </div>
+        <!--头部右侧导航-->
+    </div>
+    <!--左侧导航-->
+    <div class="main">
+        <!--主体左侧导航-->
+        <div class="left_menu ">
+           
+            <dl>
+                <dt>栏目管理</dt>
+                <dd>
+                    <a href="{|U:'Category/index'}">栏目列表</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>文章管理</dt>
+                <dd>
+                    <a href="{|U:'Content/index'}">文章列表</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>配置管理</dt>
+                <dd>
+                    <a href="{|U:'Config/set'}">配置列表</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>模板管理</dt>
+                <dd>
+                    <a href="{|U:'TplStyle/index'}">模板列表</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>数据备份/还原</dt>
+                <dd>
+                    <a href="{|U:'Backup/index'}">数据备份</a>
+                </dd>
+                <dd>
+                    <a href="{|U:'Backup/backlist'}">备份列表</a>
+                </dd>
+            </dl>
+              <dl>
+                <dt>页面静态化</dt>
+                <dd>
+                    <a href="{|U:'Html/createIndex'}">生成静态列表</a>
+                </dd>
+            </dl>
+            <dl>
+            <dl>
+                <dt>友情链接管理</dt>
+                <dd>
+                    <a href="{|U:'Link/index'}">友情链接列表</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>管理员管理</dt>
+                <dd>
+                    <a href="{|U:'User/index'}">管理员列表</a>
+                </dd>
+            </dl>
+        </div>
+        <!--主体左侧导航-->
+        <!--内容显示区域-->
+        <div class="top_content ">
+            <iframe src="{|U:'welcome'}" name='iframe' scrolling="auto" frameborder="0" 
+            style="height: 100%;width: 100%;"></iframe>
+        </div>
+    <!--内容显示区域-->
+    </div>
+</body>
+</html>

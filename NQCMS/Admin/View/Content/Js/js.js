@@ -1,0 +1,10 @@
+$("form").validate({
+	cid:{
+		rule:{required:true,regexp:/^[1-9]\d*$/},
+		error:{regexp:'请选择栏目'}
+	},
+	title:{
+		rule:{required:true,regexp:/^.{2,}$/},
+		error:{required:'标题不能为空',regexp:'文字太少了..'}
+	}
+})

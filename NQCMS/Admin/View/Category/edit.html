@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>编辑栏目</title>
+<hdjs>
+
+</head>
+    <body>
+    		<div class='wrap'>
+                <div class="menu_list">
+                    <ul>
+                        <li><a href="{|U:'index'}"  class="action">栏目列表</a></li>
+                        <li><a href="{|U:'add'}">添加栏目</a></li>
+                    </ul>
+                </div> 
+    			<form method='post'>
+    				<div class="title-header">编辑栏目</div>
+    				<table class='table1 hd-form'>
+                        <input type="hidden" value="{$data.cid}" name="cid" />
+                        <tr>
+                            <th class='w100'>父级栏目名称</th>
+                            <td>
+                                <select name="pid" id="">
+                                    <option value="0" >顶级</option>
+                                    <list from="$catedata" name="$d">   
+                                    <option value="{$d.cid}" {$d.selected} {$d.disabled} >{$d.catname}</option>
+                                    </list>
+                                </select>
+                            </td>
+                        </tr>
+    					<tr>
+    						<th class='w100'>栏目名称</th>
+    						<td>
+    							<input type="text" name='catname' class='w200' value="{$data.catname}">
+    						</td>
+    					</tr>
+    					<tr>
+    						<th>关键字</th>
+    						<td>
+    							<input type="text" name='keywords' class='w200' value="{$data.keywords}">
+    						</td>
+    					</tr>
+    					<tr>
+    						<th>描述</th>
+    						<td>
+    							<textarea name="description" class='w200 h80'>{$data.description}</textarea>
+    						</td>
+    					</tr>
+                        <tr>
+                            <th>列表页模板</th>
+                            <td>
+                                <input type="text" name='list_tpl' class='w200' value="list.html">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>内容页模板</th>
+                            <td>
+                                <input type="text" name='content_tpl' class='w200' value="content.html">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>静态目录</th>
+                            <td>
+                                <input type="text" name='html_dir' class='w200' value="{$data.html_dir}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>内容页面静态规则</th>
+                            <td>
+                                <input type="text" name='arc_html_rule' class='w200' value="{$data.arc_html_rule}">
+                                {y}年{m}月{d}日{aid}文章aid
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>访问方式</th>
+                            <td>
+                                <lable>
+                                <input type="radio" name='url_type' class='w50' value="1" <if value="$data.url_type eq 1"> checked=''</if>>静态访问
+                                </lable>
+                                <lable >
+                                    <input type="radio" name='url_type' class='w50' value="2" <if value="$data.url_type eq 2"> checked=''</if>>动态访问
+                                </lable> 
+                            </td>
+                        </tr>
+    				</table>
+    				<input type="submit" class='hd-success' >
+    				</form>
+    		</div>
+            <!-- onclick="return confirm('其栏目下的子栏目也会删除，你确定要删除该栏目吗？') -->
+    	<!-- 	<js file='__CONTROLLER_VIEW__/Js/js.js'/> -->
+    </body>
+</html>

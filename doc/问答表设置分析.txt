@@ -1,0 +1,15 @@
+user
+1	李四		100
+2 	小马		110
+3	张三		90
+admin
+1 			问题  					aid			uid    	cid			anums(回答数)
+1     		哪个软件做图好用     	2			3		2			2
+
+回答 answer				uid
+1    firework				1
+2    photoshop 				2
+
+栏目
+1 	教育
+2	IT

@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<title>公司简介</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="__TPL_PATH__/css/main.css" rel="stylesheet" type="text/css">
+<script src="__TPL_PATH__/js/jquery.min.1.8.2.js"></script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*');</script>
+<![endif]-->
+</head>
+<body>
+<include file="__TPL_PATH__/Block/header.html"/>;
+<div id="banner_inner">
+	<div style="background-image:url(__TPL_PATH__/images/banner_inner.jpg);">　</div>
+	<div class="warp">
+		<h2><a href="/gongsijianjie">关于我们<br><span>About us</span></a></h2>
+	</div>
+</div>
+<div class="warp clearfix">
+	<div class="c_l">
+	<dl class="left_nav">					
+		<channellist cid="{$hd.get.cid}" type="son">
+			<dt><a href="{$field.caturl}" title="{$field.catname}">{$field.catname}</a></dt>
+		</channellist>		
+	</dl>
+		<ul class="list_left_btn">
+			<li><a href="{|U:'Index/Index/category',array('cid'=>2)}"><img src="__TPL_PATH__/images/btn_products.jpg"></a></li>
+			<li><a href="{|U:'Index/Index/content',array('aid'=>25)}"><img src="__TPL_PATH__/images/btn_contact.jpg"></a></li>
+			<li><img src="__TPL_PATH__/images/btn_rexian.jpg"></li>
+		</ul>
+		<div class="list_left">
+			<p class="title">重点推荐</p>
+			<ul>
+				<recommend aid="{$hd.get.aid}" row="4" len="15">
+				<li><a href="{$field.url}">·{$field.title}</a></li>
+				</recommend>
+
+			</ul>
+		</div>
+	</div>
+	<div class="c_r">
+		<div class="pos2">
+			<p><a href="{|U:'Index/Index'}">首页</a> > <a href="{|U:'Index/Index/about',array('aid'=>24)}">公司简介</a></p>
+		</div>
+		<h1 class="dis_title">{$data.title}</h1>
+		<div class="dis_content2">
+			{$data.content}　　
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="warp">
+		<p>合肥宝尼尔电器有限公司：专业的<a href="http://www.cssmoban.com">冷柜</a>、<a href="http://www.cssmoban.com">冷藏柜</a>、<a href="http://www.cssmoban.com">保鲜柜</a>、<a href="http://www.cssmoban.com">展示柜</a>、<a href="http://www.cssmoban.com">超市陈列柜</a>等产品供应商。&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		<p>业务一部：0592-123456789 / 0592-123456789&nbsp;&nbsp;&nbsp;&nbsp;	业务二部：0592-123456789 / 0592-123456789  </p>
+		<p>业务三部：0592-123456789 / 0592-123456789&nbsp;&nbsp;&nbsp;&nbsp;	业务四部：0592-123456789 / 0592-123456789  </p>
+
+	</div>
+</div>
+
+
+</body>
+</html>

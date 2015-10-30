@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<title>新闻资讯</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="__TPL_PATH__/css/main.css" rel="stylesheet" type="text/css">
+<script src="__TPL_PATH__/js/jquery.min.1.8.2.js"></script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*');</script>
+<![endif]-->
+</head>
+<body>
+
+<include file="__TPL_PATH__/Block/header.html"/>;
+<div id="banner_inner">
+	<div style="background-image:url(__TPL_PATH__/images/banner_inner.jpg);">　</div>
+	<div class="warp">
+		<h2><a href="#">{$cms.catname}<br><span>News information</span></a></h2>
+	</div>
+</div>
+<div class="warp clearfix">
+	<div class="c_l">
+	<dl class="left_nav">					
+				<channellist cid="{$hd.get.cid}" type="son">
+					<dt><a href="{$field.url}" title="{$field.catname}">{$field.catname}</a></dt>		
+				</channellist>
+		</dl>
+		<ul class="list_left_btn">
+			<li><a href="{|U:'Index/Index/category',array('cid'=>2)}"><img src="__TPL_PATH__/images/btn_products.jpg"></a></li>
+			<li><a href="{|U:'Index/Index/content',array('aid'=>25,'cid'=>8)}"><img src="__TPL_PATH__/images/btn_contact.jpg"></a></li>
+			<li><img src="__TPL_PATH__/images/btn_rexian.jpg"></li>
+		</ul>
+		<div class="list_left">
+			<p class="title">重点推荐</p>
+			<ul>
+			<relativelist cid="{$hd.get.cid}" row="4" >
+				<li><a href="{$field.url}">·{$field.title}</a></li>
+			</relativelist >	
+				<!-- <li><a href="content.html">·临汾水果柜/不同食品的最佳存</a></li> -->
+			</ul>
+		</div>
+	</div>
+	<div class="c_r">
+		<div class="pos">
+			<h2>{$cms.catname}</h2>
+			<p> <a href="{|U:'Index/Index/index'}">首页</a> > <a href="{|U:'Index/Index/category',array('cid'=>$parentcatedata['cid'])}">新闻资讯</a> > </p>
+		</div>
+		<div class="list_news">
+		<arccontent cid="{$hd.get.cid}"  row="5" len="120">
+		<dl class="clearfix">
+				<dt>{$field.addtime|date:"d",@@}<span>{$field.addtime|date:"Y-m",@@}</span></dt>
+				<dd>
+					<h2><a href="{$field.url}"><b>{$field.title}</b></a></h2>
+					<p class="intro">{$field.content}... </p>
+					<p class="btn_more"><a href="{$field.url}"><img src="__TPL_PATH__/images/btn_right_more.jpg"></a></p>
+				</dd>
+		</dl>
+		</arccontent>
+
+		</div>
+		<div class="pages"> 
+		<!-- 分页 -->
+			<page />
+
+ 		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="warp">
+		<p>合肥宝尼尔电器有限公司：专业的<a href="http://www.cssmoban.com">冷柜</a>、<a href="http://www.cssmoban.com">冷藏柜</a>、<a href="http://www.cssmoban.com">保鲜柜</a>、<a href="http://www.cssmoban.com">展示柜</a>、<a href="http://www.cssmoban.com">超市陈列柜</a>等产品供应商。&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		<p>业务一部：0592-123456789 / 0592-123456789&nbsp;&nbsp;&nbsp;&nbsp;	业务二部：0592-123456789 / 0592-123456789  </p>
+		<p>业务三部：0592-123456789 / 0592-123456789&nbsp;&nbsp;&nbsp;&nbsp;	业务四部：0592-123456789 / 0592-123456789  </p>
+
+	</div>
+
+</div>
+
+</body>
+</html>

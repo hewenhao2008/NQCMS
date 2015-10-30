@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文章列表</title>
+	<hdjs/>
+</head>
+<body>
+	<div class='wrap'>
+		<div class="menu_list">
+		    <ul>
+		        <li><a href="{|U:'index'}"  class="action">友情链接列表</a></li>
+		        <li><a href="{|U:'add'}">添加链接</a></li>
+		    </ul>
+		</div> 
+	<table class='table2'>
+		<thead>
+			<tr>
+				<td class='w100'>LID</td>
+				<td>企业名称</td>
+				<td>企业网址</td>
+				<td>企业logo</td>
+				<td class='w200'>操作</td>
+			</tr>
+		</thead>
+		<tbody>
+			<list from="$data" name="$d">
+				<tr>
+					<td>{$d.lid}</td>
+					<td>{$d.name}</td>
+					<td>{$d.url}</td>
+					<td><img src="{$d.thumb}"></td>
+					<td>
+						<a href="{|U:'edit',array('lid'=>$d['lid'])}">编辑</a> |
+						<a href="{|U:'delete',array('lid'=>$d['lid'])}" onclick='return confirm("确定删除该链接吗?")'>删除</a>
+					</td>
+				</tr>
+			</list>
+		</tbody>
+	</table>
+	<!-- 显示页码 -->
+	<!-- <div class='page1'>
+		{$data['page']}
+	</div> -->
+	</div>
+</body>
+</html>

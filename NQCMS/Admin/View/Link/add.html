@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <hdjs/>
+  <title>添加友情链接</title>
+</head>
+<body>
+	<div class='wrap'>
+        <div class="menu_list">
+            <ul>
+                <li><a href="{|U:'index'}"  class="action">链接列表</a></li>
+                <li><a href="{|U:'add'}">添加链接</a></li>
+            </ul>
+        </div> 
+		<form method='post' class="hd-form">
+                <div class="title-header">添加链接</div>
+                	<table class='table1'>
+    					<tr>
+    						<th>企业名称</th>
+    						<td>
+    							<input type="text" name="name">
+    						</td>
+    					</tr>
+    					<tr>
+    						<th class='w100'>企业网址</th>
+    						<td>
+    							<input type="text" name='url' class='w300' >
+                                    例如：www.baidu.com
+    						</td>
+
+    					</tr>
+                        <tr>
+                            <th>缩略图</th>
+                            <td>
+                                <upload name="thumb" message="0" size='2' water='0'/>
+                            </td>
+                        </tr>
+				    </table>
+            	<div class='position-bottom'>
+        			<input type="submit" class='hd-success'  value="提交">
+        		</div>
+            
+       </form>
+	</div>
+  
+  
+    </body>
+</html>

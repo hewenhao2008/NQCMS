@@ -1,0 +1,3 @@
+title			name			value			type					info
+网站名称	webname     	后盾网			text/radio/textarea
+网站开启	web_status			1			radio 					1|开,0|关

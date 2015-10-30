@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<hdjs/>
+<title>配置管理首页</title>
+</head>
+<body>
+	<div class='wrap'>
+	<form action="">
+		<div class="title-header">网站配置</div>
+		<table class="table1 hd-form">
+	
+			<tbody>
+				<list from="$data" name="$d">
+				<tr >
+					<th class="w200">{$d.title}</th>
+					<td>{$d._html}</td>
+				</tr>
+				</list>
+				
+			</tbody>
+		</table>
+		<div class='position-bottom'>
+			<input type="submit" value='修改' class='hd-success'>
+		</div>
+	</form>
+	</div>
+	<js file="__CONTROLLER_VIEW__/Js/js.js"/>
+</body>
+</html>

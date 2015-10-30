@@ -1,0 +1,104 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<title>{$cms.title}</title>
+<meta http-equiv="keywords" content="超市,冷柜,直冷,式,和,风冷,独具一格,冷柜,也,"/>
+<meta http-equiv="description" content="冷柜也分直冷和风冷，那么超市冷柜直冷式和风冷式的区别在哪里呢？小编告诉你直冷式就类似您家里用的冰箱，靠冰箱内壁的铜管制冷；而风冷的类似您家里的空调，靠吹出的冷风制冷。 直"/>
+<link href="__TPL_PATH__/css/main.css" rel="stylesheet" type="text/css">
+<script src="__TPL_PATH__/js/jquery.min.1.8.2.js"></script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*');</script>
+<![endif]-->
+</head>
+<body>
+<include file="__TPL_PATH__/Block/header.html"/>;
+<div id="banner_inner">
+	<div style="background-image:url(__TPL_PATH__/images/banner_inner.jpg);">　</div>
+	<div class="warp">
+		<h2><a href="#">{$cms.catname}<br><span>News information</span></a></h2>
+	</div>
+</div>
+<div class="warp clearfix">
+	<div class="c_l">
+	<dl class="left_nav">
+		<!-- 栏目列表 -->
+		<channel aid="{$hd.get.aid}" type="slef">
+			<dt><a href="{$field.url}" title="{$field.catname}">{$field.catname}</a></dt>
+		</channel>	
+	</dl>
+		<ul class="list_left_btn">
+			<li><a href="{|U:'Index/Index/category',array('cid'=>2)}"><img src="__TPL_PATH__/images/btn_products.jpg"></a></li>
+			<li><a href="{|U:'Index/Index/content',array('aid'=>25,'cid'=>8)}"><img src="__TPL_PATH__/images/btn_contact.jpg"></a></li>
+			<li><img src="__TPL_PATH__/images/btn_rexian.jpg"></li>
+		</ul>
+		<div class="list_left">
+			<p class="title">重点推荐</p>
+			<ul>
+				<recommend aid="{$hd.get.aid}" row="3" len="10" >
+				<li><a href="{$field.url}">.{$field.title}</a></li>
+				</recommend>
+				
+			</ul>
+		</div>
+	</div>
+	<div class="c_r">
+		<div class="pos2">
+			<p><a href='{|U:'Index/Index/index'}'>首页</a> > <a href="{|U:'Index/Index/category',array('cid'=>$parentcatedata['cid'])}">{$parentcatedata['catname']}</a> > <a href="{|U:'Index/Index/category',array('cid'=>$cms['cid'])}">{$cms.catname}</a> > {$cms.title}</p>
+		</div>
+		<h1 class="dis_title">{$cms.title}</h1>
+		<div class="dis_time">来源：http://www.cssmoban.com&nbsp;&nbsp;&nbsp;&nbsp; 时间：{$cms.addtime|date:'Y-m-d H:i',@@}&nbsp;&nbsp;&nbsp;&nbsp;浏览数：{$cms.click}<script src="/plus/count.php?view=yes&aid=284&mid=1"type='text/javascript' language="javascript"></script></div>
+		<!-- <div class="dis_intro"></div> -->
+		<div class="dis_content">
+			{$cms.content}
+			<p>文章地址：<a href="">{$url}</a></p>
+			
+		</div>
+		<div class="dis_prevnext clearfix">
+			<p class="left">上一篇：
+				<prevarc aid="$hd.get.aid">
+				<a href='{$field.url}'>{$field.title}</a>
+				</prevarc> 
+			</p>
+			<p class="right">下一篇：
+				<nextarc aid="$hd.get.aid">
+				<a href='{$field.url}'>{$field.title}</a>
+				</nextarc> 
+			</p>
+		</div>
+		<p class="dis_block_title">您可能还需要了解</p>
+		<div class="list_liaojie clearfix">
+			<ul>
+			<li><a href="/xianrougui/176.html"><img src="/uploads/allimg/130304/1-1303041051160-L.jpg" alt="XRG-K2鲜肉柜"></a></li>
+<li><a href="/fengmugui/43.html"><img src="/uploads/allimg/130223/1-130223150T20-L.jpg" alt="LFG-13A 风幕柜"></a></li>
+<li><a href="/dangaogui/91.html"><img src="/uploads/allimg/130226/1-130226201R20-L.jpg" alt="13CWG 常温蛋糕柜"></a></li>
+<li><a href="/shucaishuiguogui/193.html"><img src="/uploads/130304/1-130304153113A2.jpg" alt="LFG-13A 蔬菜水果保鲜柜"></a></li>
+
+			</ul>
+		</div>
+		<p class="dis_block_title">相关{$cms.catname}</p>
+		<ul class="list_xiangguan clearfix">
+			<relativearc aid="$hd.get.aid" row="4">
+				<li>
+					<a href="{$field['url']}">·{$field.title}</a>
+				</li>
+			</relativearc>
+			
+		</ul>
+	</div>
+</div>
+<div id="footer">
+	<div class="warp">
+		<p>合肥宝尼尔电器有限公司：专业的<a href="http://www.cssmoban.com">冷柜</a>、<a href="http://www.cssmoban.com">冷藏柜</a>、<a href="http://www.cssmoban.com">保鲜柜</a>、<a href="http://www.cssmoban.com">展示柜</a>、<a href="http://www.cssmoban.com">超市陈列柜</a>等产品供应商。&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		<p>业务一部：0592-123456789 / 0592-123456789&nbsp;&nbsp;&nbsp;&nbsp;	业务二部：0592-123456789 / 0592-123456789  </p>
+		<p>业务三部：0592-123456789 / 0592-123456789&nbsp;&nbsp;&nbsp;&nbsp;	业务四部：0592-123456789 / 0592-123456789  </p>
+
+	</div>
+
+</div>
+
+
+</body>
+</html>

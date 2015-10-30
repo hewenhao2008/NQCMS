@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<hdjs/>
+</head>
+<body>
+	<div class='wrap'>
+        <div class="menu_list">
+            <ul>
+                <li><a href="{|U:'index'}"  class="action">文章列表</a></li>
+                <li><a href="{|U:'add'}">添加文章</a></li>
+            </ul>
+        </div> 
+		<form method='post'>
+	        <div class="tab">
+                <ul class="tab_menu">
+                    <li lab="base">
+                        <a> 基本设置 </a>
+                    </li>
+                    <li lab="other" class="action">
+                        <a>其他设置 </a>
+                    </li>
+                </ul>
+                <div class="tab_content  hd-form">
+                    <div id="base">
+                    	<table class='table1'>
+        					<tr>
+        						<th>栏目</th>
+        						<td>
+        							<select name="cid" class='w200'>
+        								<option value="0">==选择栏目==</option>
+        								<list from="$category" name="$d">
+                                         
+    									<option value='{$d.cid}'>{$d.catname}</option>
+        								</list>
+        							</select>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th class='w100'>标题</th>
+        						<td>
+        							<input type="text" name='title' class='w300' >
+        						</td>
+        					</tr>
+                            <tr>
+                                <th>缩略图</th>
+                                <td>
+                                    <upload name="thumb" message="0" size='2' water='0'/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>正文</th>
+                                <td>
+                                    <ueditor name="content"/>
+                                </td>
+                            </tr>
+    				    </table>
+                    </div>
+                    <div id="other">
+                        <table class='table1'>
+    					   <tr>
+    						    <th class='w100'>发表时间</th>
+    						    <td>
+    							    <input type="text" readonly="readonly" id="addtime" name="addtime"
+                                    value="{|date:'Y/m/d H:i:s'}"class="w150"/>
+                                    <script>
+                                    	$('#addtime').calendar({format: 'yyyy/MM/dd HH:mm:ss'});
+                                     </script>
+    						    </td>
+    					    </tr>
+        					<tr>
+        						<th>关键字</th>
+        						<td>
+        							<input type="text" name='keywords' class='w200'>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>描述</th>
+        						<td>
+        							<textarea name="description" class='w200 h80'></textarea>
+        						</td>
+        					</tr>
+        					<tr>
+        						<th>点击数</th>
+        						<td>
+        							<input type="text" name='click' value='100' class='w200'>
+        						</td>
+        					</tr>
+                        </table>
+                     </div>
+                    </div>
+                </div>
+            	<div class='position-bottom'>
+        			<input type="submit" class='hd-success' >
+        		</div>
+            </div>
+       </form>
+	</div>
+    		<js file='__CONTROLLER_VIEW__/Js/js.js'/>
+    </body>
+</html>
